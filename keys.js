@@ -1,4 +1,4 @@
-console.log('Keys are being loaded');
+//console.log('Keys are being loaded');
 exports.twitter = {
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
@@ -11,4 +11,4 @@ exports.spotify = {
     id1: process.env.SPOTIFY_ID,
     secret2: process.env.SPOTIFY_SECRET
 };
-console.log('Finished loading');
+//console.log('Finished loading');

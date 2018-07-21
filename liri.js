@@ -205,13 +205,13 @@ function myMovieThis(){
 
                     if (JSON.parse(body).Ratings.length > 1){
                         var movieDetail = "\r\nMovie Details  " + "\r\n*************  " + "\r\nTitle= " + JSON.parse(body).Title + "\r\nYear= " + JSON.parse(body).Year 
-                        + "\r\nimdbRating= " + JSON.parse(body).imdbRating + "\r\nrotten Tomatoes Rating= " + JSON.parse(body).Ratings[1].Value + "\r\nCountry= " + JSON.parse(body).Country
+                        + "\r\nimdbRating= " + JSON.parse(body).imdbRating + "\r\nRotten Tomatoes Rating= " + JSON.parse(body).Ratings[1].Value + "\r\nCountry= " + JSON.parse(body).Country
                         + "\r\nLanguage= " + JSON.parse(body).Language + "\r\nPlot = " + JSON.parse(body).Plot + "\r\nActors= " + JSON.parse(body).Actors 
                         + "\r\n*******************************************************************************"  ;                       
                     }
                     else{
                         var movieDetail = "\r\nMovie Details  " + "\r\n*************  " + "\r\nTitle= " + JSON.parse(body).Title + "\r\nYear= " + JSON.parse(body).Year 
-                        + "\r\nimdbRating= " + JSON.parse(body).imdbRating + "\r\nrotten Tomatoes Rating= " + "Not Available" + "\r\nCountry= " + JSON.parse(body).Country
+                        + "\r\nimdbRating= " + JSON.parse(body).imdbRating + "\r\nRotten Tomatoes Rating= " + "Not Available" + "\r\nCountry= " + JSON.parse(body).Country
                         + "\r\nLanguage= " + JSON.parse(body).Language + "\r\nPlot = " + JSON.parse(body).Plot + "\r\nActors= " + JSON.parse(body).Actors 
                         + "\r\n*******************************************************************************"  ;
                     }

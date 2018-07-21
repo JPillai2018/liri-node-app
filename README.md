@@ -1,4 +1,5 @@
 # liri-node-app
+# This app is meant to be run on a Terminal.
 # Give a few nice options to display tweets from your throw-away/ twitter account
 # Give an option to display details about song or an artist from Spotify
 # Give an option to Display a movie info

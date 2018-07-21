@@ -199,12 +199,23 @@ function myMovieThis(){
         request(queryUrl, function(error, response, body) {
             if  (JSON.parse(body).Response === "True"){
                 if ((!error && response.statusCode === 200)) {
+                    //console.log ("Rating??= " +  JSON.parse(body).Ratings.length);
                     // Parse the body of the site and recover just the imdbRating
                     // (Note: The syntax below for parsing isn't obvious. Just spend a few moments dissecting it).
-                    var movieDetail = "\r\nMovie Details  " + "\r\n*************  " + "\r\nTitle= " + JSON.parse(body).Title + "\r\nYear= " + JSON.parse(body).Year 
+
+                    if (JSON.parse(body).Ratings.length > 1){
+                        var movieDetail = "\r\nMovie Details  " + "\r\n*************  " + "\r\nTitle= " + JSON.parse(body).Title + "\r\nYear= " + JSON.parse(body).Year 
                         + "\r\nimdbRating= " + JSON.parse(body).imdbRating + "\r\nrotten Tomatoes Rating= " + JSON.parse(body).Ratings[1].Value + "\r\nCountry= " + JSON.parse(body).Country
                         + "\r\nLanguage= " + JSON.parse(body).Language + "\r\nPlot = " + JSON.parse(body).Plot + "\r\nActors= " + JSON.parse(body).Actors 
+                        + "\r\n*******************************************************************************"  ;                       
+                    }
+                    else{
+                        var movieDetail = "\r\nMovie Details  " + "\r\n*************  " + "\r\nTitle= " + JSON.parse(body).Title + "\r\nYear= " + JSON.parse(body).Year 
+                        + "\r\nimdbRating= " + JSON.parse(body).imdbRating + "\r\nrotten Tomatoes Rating= " + "Not Available" + "\r\nCountry= " + JSON.parse(body).Country
+                        + "\r\nLanguage= " + JSON.parse(body).Language + "\r\nPlot = " + JSON.parse(body).Plot + "\r\nActors= " + JSON.parse(body).Actors 
                         + "\r\n*******************************************************************************"  ;
+                    }
+
                     console.log(movieDetail);
                     // Appending to Log file
                     lfile.appendFile(logFile, "\r\n" + movieDetail, function(err) {

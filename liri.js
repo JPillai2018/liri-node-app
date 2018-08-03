@@ -101,7 +101,7 @@ function spotifySong(){
           message: "Song/Artist Name Please..."
         },
     ]).then(function(user){
-        var selection = user.name;
+        var selection = user.name.trim();
         selection = selection.split(" ");
         var songName = "";
         for (var i = 0; i < selection.length; i++) {
@@ -112,7 +112,13 @@ function spotifySong(){
                 songName += selection[i];
             }
         }
-        spotifyThisSongs(songName);
+        if ((songName.trim() === "") || (songName === " ")){
+            console.log("Incorrect Input. Please try again!!!!");
+        }
+        else
+        {
+            spotifyThisSongs(songName);
+        }
     })
 };
 
